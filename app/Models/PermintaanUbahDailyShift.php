@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DailyShift extends Model
+class PermintaanUbahDailyShift extends Model
 {
     use HasFactory;
-
-    protected $table = 'daily_shift';
-
+    protected $table = 'permintaan_ubah_daily_shift';
     protected $fillable = [
         'kd_daily_task',
         'ploting_lantai',
@@ -20,5 +18,6 @@ class DailyShift extends Model
         'nama',
         'checklist_masuk',
         'checklist_keluar',
+        'approval'
     ];
 }

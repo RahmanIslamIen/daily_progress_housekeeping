@@ -80,7 +80,7 @@
             </a>
 
             <!-- Sidebar -->
-            @include('admin.admin-sidebar')
+            @include('user.user-sidebar')
             <!-- /.sidebar -->
         </aside>
 

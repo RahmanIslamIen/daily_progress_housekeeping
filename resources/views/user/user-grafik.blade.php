@@ -1,4 +1,4 @@
-@extends('admin.admin-dashboard')
+@extends('user.user-dashboard')
 
 @section('breadcrumb')
     <div class="content-header">
@@ -23,7 +23,7 @@
     <!-- BAR CHART -->
     <div class="card card-success">
         <div class="card-header">
-            <h3 class="card-title">Bar Chart</h3>
+            <h3 class="card-title">Absensi Harian Mu</h3>
         </div>
         <div class="card-body">
             <div class="chart">

@@ -12,7 +12,25 @@
                             @csrf
 
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                                <label for="kd_karyawan"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Kode Karyawan') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="kd_karyawan" type="number"
+                                        class="form-control @error('kd_karyawan') is-invalid @enderror" name="kd_karyawan"
+                                        value="{{ old('kd_karyawan') }}" required autocomplete="kd_karyawan" autofocus>
+
+                                    @error('kd_karyawan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="name"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text"
