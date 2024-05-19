@@ -23,7 +23,7 @@
     <!-- BAR CHART -->
     <div class="card card-success">
         <div class="card-header">
-            <h3 class="card-title">Bar Chart</h3>
+            <h3 class="card-title">Grafik Absen</h3>
         </div>
         <div class="card-body">
             <div class="chart">
