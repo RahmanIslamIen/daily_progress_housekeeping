@@ -76,7 +76,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="/" class="brand-link">
-                <span class="brand-text font-weight-light">Daily Progress House Keeping</span>
+                <span class="brand-text font-weight-light" style="font-size: 18px">Daily Progress House Keeping</span>
             </a>
 
             <!-- Sidebar -->
