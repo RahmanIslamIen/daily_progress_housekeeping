@@ -19,11 +19,70 @@
 @endsection
 
 @section('content')
-    <h1>bagian grafik</h1>
+    <div class="row">
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <p>Shift Task</p>
+                    <h3>{{ $jmlST }}</h3>
+                </div>
+                <div class="icon">
+                    <i class="nav-icon fas fa-tasks"></i>
+                </div>
+                <a href="#" class="small-box-footer">Lihat <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <p>Daily Shift</p>
+                    <h3>{{ $jmlDS }}</h3>
+                </div>
+                <div class="icon">
+                    <i class="nav-icon ion ion-ios-clock"></i>
+                </div>
+                <a href="#" class="small-box-footer">Lihat <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+                <div class="inner text-white">
+                    <p>Perubahan Daily Shift</p>
+                    <h3>{{ $jmlUDS }}</h3>
+                </div>
+                <div class="icon">
+                    <i class="nav-icon fas fa-sync"></i>
+                </div>
+                <a href="#" class="small-box-footer" style="color: white;">Lihat <i
+                        class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <p>Kerusakan Toilet</p>
+                    <h3>{{ $jmlDKT }}</h3>
+                </div>
+                <div class="icon">
+                    <i class="nav-icon fas fa-exclamation-triangle"></i>
+                </div>
+                <a href="#" class="small-box-footer">Lihat <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+    </div>
+    <h3>bagian grafik</h3>
     <!-- BAR CHART -->
     <div class="card card-success">
         <div class="card-header">
-            <h3 class="card-title">Grafik Absen</h3>
+            <h3 class="card-title">Grafik Absensi</h3>
         </div>
         <div class="card-body">
             <div class="chart">
