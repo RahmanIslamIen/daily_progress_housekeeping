@@ -38,7 +38,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                    <p>Daily Shift</p>
+                    <p>Absen Daily Shift</p>
                     <h3>{{ $jmlDS }}</h3>
                 </div>
                 <div class="icon">
@@ -67,7 +67,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
-                    <p>Kerusakan Toilet</p>
+                    <p>Laporan Kerusakan Toilet</p>
                     <h3>{{ $jmlDKT }}</h3>
                 </div>
                 <div class="icon">

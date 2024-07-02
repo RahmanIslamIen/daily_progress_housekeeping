@@ -19,7 +19,7 @@ class CreateDailyShiftTable extends Migration
             $table->string('ploting_lantai');
             $table->string('kd_karyawan');
             $table->string('jenis_shift');
-            $table->string('tanggal');
+            $table->date('tanggal');
             $table->string('nama');
             $table->text('checklist_masuk');
             $table->text('checklist_keluar');

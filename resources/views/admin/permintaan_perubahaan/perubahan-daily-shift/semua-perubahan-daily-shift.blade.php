@@ -34,7 +34,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <table id="example2" class="table table-bordered table-hover">
+            <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr style="font-size: 11px">
                         <th>Kd Daily Task</th>
@@ -60,14 +60,21 @@
                             <td>{{ $semuaData->checklist_masuk }}</td>
                             <td>{{ $semuaData->checklist_keluar }}</td>
                             <td class="text-center">
-                                <a href="ubah-permintaan-perubahan-daily-shift/{{ $semuaData->id }}"
-                                    class="btn btn-xs btn-info">edit</a>
-                                <form method="POST" action="/hapus-permintaan-perubahan-daily-shift/{{ $semuaData->id }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-xs btn-danger"
-                                        onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">Delete</button>
-                                </form>
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="ubah-permintaan-perubahan-daily-shift/{{ $semuaData->id }}"
+                                            class="btn btn-xs btn-info">edit</a>
+                                    </div>
+                                    <div class="col">
+                                        <form method="POST"
+                                            action="/hapus-permintaan-perubahan-daily-shift/{{ $semuaData->id }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-xs btn-danger"
+                                                onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     @endforeach

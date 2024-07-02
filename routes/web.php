@@ -9,7 +9,7 @@ use App\Http\Controllers\PermintaanPerubahanController;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 // * ==================================================================================
-// *                                    BAGIAN ADMIN
+// *                                    BAGIAN ADMIN 👨‍💼
 // * ==================================================================================
 
 // * Kelola Penugasan
@@ -53,7 +53,7 @@ Route::delete('/hapus-permintaan-perubahan-toilet/{id}', [PermintaanPerubahanCon
 
 
 // * ==================================================================================
-// *                                    BAGIAN USER
+// *                                    BAGIAN USER 🧑
 // * ==================================================================================
 
 // * Kelola Penugasan
