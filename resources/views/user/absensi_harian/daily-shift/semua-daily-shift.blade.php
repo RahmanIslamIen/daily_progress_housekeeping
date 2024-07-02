@@ -24,7 +24,7 @@
             <a href="/print-pdf-daily-shift" class="btn btn-warning" target="_blank">Print PDF</a>
         </div>
         <div class="d-flex justify-content-end m-2">
-            <a href="/user-tambah-daily-shift" class="btn btn-success">Tambah Data</a>
+            <a href="/user-tambah-daily-shift" class="btn btn-success">Absen Daily Shift</a>
         </div>
     </div>
 
