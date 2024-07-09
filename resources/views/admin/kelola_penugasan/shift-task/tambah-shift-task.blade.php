@@ -28,10 +28,11 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="kd_daily_task">Kd Daily Task</label>
-                    <input type="text" class="form-control" id="kd_daily_task" name="kd_daily_task">
+                    <input type="text" class="form-control" id="kd_daily_task" name="kd_daily_task"
+                        value="{{ $newKdDailyTask }}" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="jam">jam</label>
+                    <label for="jam">Jam</label>
                     <input type="time" class="form-control" id="jam" name="jam">
                 </div>
                 <div class="form-group">
@@ -51,8 +52,6 @@
                     <input type="text" class="form-control" id="keterangan" name="keterangan">
                 </div>
             </div>
-            <!-- /.card-body -->
-
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary" style="float: right">Simpan</button>
             </div>

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Models\DailyShift;
 use App\Models\ShiftTask;
+use Illuminate\Support\Facades\Auth;
 
 class KelolaPenugasanController extends Controller
 {
@@ -20,7 +22,15 @@ class KelolaPenugasanController extends Controller
     }
     public function tambahShiftTask()
     {
-        return view('admin.kelola_penugasan.shift-task.tambah-shift-task');
+        $lastTask = ShiftTask::orderBy('kd_daily_task', 'desc')->first();
+        $newKdDailyTask = 'T001';
+
+        if ($lastTask) {
+            $lastNumber = intval(substr($lastTask->kd_daily_task, 1));
+            $newKdDailyTask = 'T' . str_pad($lastNumber + 1, 3, '0', STR_PAD_LEFT);
+        }
+
+        return view('admin.kelola_penugasan.shift-task.tambah-shift-task', compact('newKdDailyTask'));
     }
     public function simpanShiftTask(Request $request)
     {
@@ -54,7 +64,8 @@ class KelolaPenugasanController extends Controller
     }
     public function tambahDailyShift()
     {
-        return view('admin.kelola_penugasan.daily-shift.tambah-daily-shift');
+        $shiftTasks = ShiftTask::all();
+        return view('admin.kelola_penugasan.daily-shift.tambah-daily-shift', compact('shiftTasks'));
     }
     public function simpanDailyShift(Request $request)
     {
@@ -76,8 +87,8 @@ class KelolaPenugasanController extends Controller
     public function editDailyShift($id)
     {
         $dailyShift = DailyShift::findOrFail($id);
-
-        return view('admin.kelola_penugasan.daily-shift.ubah-daily-shift', compact('dailyShift'));
+        $shiftTasks = ShiftTask::all();
+        return view('admin.kelola_penugasan.daily-shift.ubah-daily-shift', compact('dailyShift', 'shiftTasks'));
     }
     public function ubahDailyShift(Request $request, $id)
     {
@@ -112,12 +123,13 @@ class KelolaPenugasanController extends Controller
     // * Daily Shift 
     public function UserSemuaDailyShift()
     {
-        $data = DailyShift::all();
+        $data = DailyShift::all()->where('nama', Auth::user()->name);
         return view('user.absensi_harian.daily-shift.semua-daily-shift', compact('data'));
     }
     public function UserTambahDailyShift()
     {
-        return view('user.absensi_harian.daily-shift.tambah-daily-shift');
+        $shiftTasks = ShiftTask::all();
+        return view('user.absensi_harian.daily-shift.tambah-daily-shift', compact('shiftTasks'));
     }
     public function UserSimpanDailyShift(Request $request)
     {
@@ -138,11 +150,29 @@ class KelolaPenugasanController extends Controller
         $mpdf->Output();
     }
     // print daily shift
-    public function printPDFdailyShift()
+    public function aturPrintprintPDFdailyShift()  // admin
     {
-        $data = DailyShift::all();
+        $listNamaKaryawan = DailyShift::distinct()->pluck('nama');
+        return view('admin.kelola_penugasan.daily-shift.atur-print-daily-shift', compact('listNamaKaryawan'));
+    }
+    public function aturPrintprintPDFdailyShiftUser() // user
+    {
+        $listNamaKaryawan = DailyShift::distinct()->pluck('nama');
+        return view('user.absensi_harian.daily-shift.atur-print-daily-shift', compact('listNamaKaryawan'));
+    }
+    public function printPDFdailyShift(Request $request)
+    {
+        $startDate = Carbon::parse($request->input('start_date'))->locale('id')->isoFormat('dddd, D MMMM YYYY');
+        $endDate = Carbon::parse($request->input('end_date'))->locale('id')->isoFormat('dddd, D MMMM YYYY');
+        $nama = $request->input('nama');
+
+        $dailyShifts = DailyShift::whereBetween('tanggal', [$request->input('start_date'), $request->input('end_date')])
+            ->where('nama', 'LIKE', "%$nama%")
+            ->get();
+
         $mpdf = new \Mpdf\Mpdf();
-        $mpdf->WriteHTML(view('report.print-pdf-daily-shift', compact('data')));
+        $html = view('report.print-pdf-daily-shift', compact('dailyShifts', 'startDate', 'endDate', 'nama'))->render();
+        $mpdf->WriteHTML($html);
         $mpdf->Output();
     }
 }

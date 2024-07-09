@@ -1,11 +1,47 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-    <div class="container">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Daily Progress House Keeping</title>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <!-- style -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <style>
+        body {
+            background: url('assets/img/houseKeeping.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.37);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .teksItem {
+            color: rgb(5, 5, 5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="margin-top: 100px;">
+        <center>
+            {{-- <img src="{{ asset('assets/img/houseKeeping.png') }}" height="100" width="100" class="mb-3"> --}}
+        </center>
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header text-center">{{ __('Login') }}</div>
+                <div class="card shadow">
+                    <div class="card-header text-center teksItem">Login Daily Proggress House Keeping</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
@@ -13,7 +49,7 @@
 
                             <div class="row mb-3">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-end teksItem">{{ __('Email Address') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -64,11 +100,12 @@
                                         {{ __('Login') }}
                                     </button>
 
-                                    @if (Route::has('password.request'))
+                                    <a href="/register" class="btn btn-link">register account</a>
+                                    {{-- @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
-                                    @endif
+                                    @endif --}}
                                 </div>
                             </div>
                         </form>
@@ -77,4 +114,6 @@
             </div>
         </div>
     </div>
-@endsection
+</body>
+
+</html>

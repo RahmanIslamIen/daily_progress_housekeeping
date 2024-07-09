@@ -29,7 +29,7 @@
                 <div class="form-group">
                     <label for="kd_daily_task">Kd Daily Task</label>
                     <input type="text" class="form-control" id="kd_daily_task" name="kd_daily_task"
-                        value="{{ $data->kd_daily_task }}">
+                        value="{{ $data->kd_daily_task }}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="jam">jam</label>

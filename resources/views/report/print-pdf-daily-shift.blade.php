@@ -48,7 +48,9 @@
 </head>
 
 <body>
-    <h1>Daily Shift</h1>
+    <h1>Laporan Absensi</h1>
+    <h4>Laporan Daily Shift dari <u>{{ $startDate }}</u> hingga <u>{{ $endDate }}</u></h4>
+    <p>Untuk Karyawan : {{ $nama }}</p>
     <table>
         <thead>
             <tr>
@@ -63,7 +65,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($data as $semuaData)
+            @foreach ($dailyShifts as $semuaData)
                 <tr>
                     <td>{{ $semuaData->kd_daily_task }}</td>
                     <td>{{ $semuaData->ploting_lantai }}</td>

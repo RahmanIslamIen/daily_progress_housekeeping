@@ -85,7 +85,9 @@ Route::post('/user-hapus-permintaan-perubahan-toilet/{id}', [PermintaanPerubahan
 // ?                                    seluruh print pdf 
 // ? ==========================================================================================
 Route::get('/print-pdf-shift-task', [KelolaPenugasanController::class, 'printShiftTask']);
-Route::get('/print-pdf-daily-shift', [KelolaPenugasanController::class, 'printPDFdailyShift']);
+Route::get('/atur-print-daily-shift', [KelolaPenugasanController::class, 'aturPrintprintPDFdailyShift']); // ? admin
+Route::get('/atur-print-daily-shift-user', [KelolaPenugasanController::class, 'aturPrintprintPDFdailyShiftUser']); // ? user
+Route::post('/print-pdf-daily-shift', [KelolaPenugasanController::class, 'printPDFdailyShift']);
 Route::get('/print-pdf-keruskan-toilet/{id}', [LaporanKerusakanController::class, 'printPDFkerusakanToilet']);
 
 

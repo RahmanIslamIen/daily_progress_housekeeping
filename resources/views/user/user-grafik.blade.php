@@ -19,7 +19,36 @@
 @endsection
 
 @section('content')
-    <h1>bagian grafik</h1>
+    <div class="row">
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-primary">
+                <div class="inner text-center">
+                    <p>Absen Bulan Ini</p>
+                    <h3>{{ $absenBulanIni }}</h3>
+                </div>
+                <div class="icon">
+                    <i class="nav-icon fas fa-tasks"></i>
+                </div>
+                <a href="#" class="small-box-footer">Lihat <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+                <div class="inner text-center">
+                    <p>Absen Tahun Ini</p>
+                    <h3>{{ $absenTahunIni }}</h3>
+                </div>
+                <div class="icon">
+                    <i class="nav-icon ion ion-ios-clock"></i>
+                </div>
+                <a href="#" class="small-box-footer">Lihat <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <h4>bagian grafik</h4>
     <!-- BAR CHART -->
     <div class="card card-success">
         <div class="card-header">

@@ -46,6 +46,15 @@ class HomeController extends Controller
             return view('admin.admin-grafik', compact('dates', 'totals', 'jmlST', 'jmlDS', 'jmlUDS', 'jmlDKT'));
         }
         if (Auth::user()->role == "user") {
+            $absenBulanIni = DailyShift::where('nama', Auth::user()->name)
+                ->whereMonth('tanggal', now()->month)
+                ->whereYear('tanggal', now()->year)
+                ->count();
+
+            $absenTahunIni = DailyShift::where('nama', Auth::user()->name)
+                ->whereYear('tanggal', now()->year)
+                ->count();
+
             // Ambil data dari tabel daily_shift
             $data = DailyShift::select('tanggal', DailyShift::raw('COUNT(*) as total'))->groupBy('tanggal')->get();
 
@@ -53,7 +62,7 @@ class HomeController extends Controller
             $dates = $data->pluck('tanggal');
             $totals = $data->pluck('total');
 
-            return view('user.user-grafik', compact('dates', 'totals'));
+            return view('user.user-grafik', compact('dates', 'totals', 'absenBulanIni', 'absenTahunIni'));
         }
     }
 

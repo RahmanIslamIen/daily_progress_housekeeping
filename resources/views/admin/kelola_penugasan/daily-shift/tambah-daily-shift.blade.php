@@ -28,7 +28,11 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="kd_daily_task">Kd Daily Task</label>
-                    <input type="text" class="form-control" id="kd_daily_task" name="kd_daily_task">
+                    <select class="form-control" id="kd_daily_task" name="kd_daily_task">
+                        @foreach ($shiftTasks as $task)
+                            <option value="{{ $task->kd_daily_task }}">{{ $task->kd_daily_task }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="ploting_lantai">Ploting Lantai</label>

@@ -22,8 +22,8 @@
     <div class="row">
         <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-info">
-                <div class="inner">
+            <div class="small-box bg-primary">
+                <div class="inner text-center">
                     <p>Shift Task</p>
                     <h3>{{ $jmlST }}</h3>
                 </div>
@@ -37,7 +37,7 @@
         <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
-                <div class="inner">
+                <div class="inner text-center">
                     <p>Absen Daily Shift</p>
                     <h3>{{ $jmlDS }}</h3>
                 </div>
@@ -51,7 +51,7 @@
         <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-warning">
-                <div class="inner text-white">
+                <div class="inner text-white text-center">
                     <p>Perubahan Daily Shift</p>
                     <h3>{{ $jmlUDS }}</h3>
                 </div>
@@ -66,7 +66,7 @@
         <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-danger">
-                <div class="inner">
+                <div class="inner text-center">
                     <p>Laporan Kerusakan Toilet</p>
                     <h3>{{ $jmlDKT }}</h3>
                 </div>

@@ -21,7 +21,7 @@
 @section('content')
     <div class="row justify-content-between">
         <div class="d-flex justify-content-start m-2">
-            <a href="print-pdf-shift-task" class="btn btn-warning" target="_blank">Print PDF</a>
+            <a href="print-pdf-shift-task" class="btn btn-warning text-white" target="_blank">Print PDF</a>
         </div>
         <div class="d-flex justify-content-end m-2">
             <a href="/tambah-shift-task" class="btn btn-success">Tambah Data</a>
