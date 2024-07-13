@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\DataKerusakanToilet;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
+use App\Models\DataKerusakanToilet;
 
 class LaporanKerusakanController extends Controller
 {
@@ -83,10 +84,46 @@ class LaporanKerusakanController extends Controller
     }
     public function ubahKerusakanToilet(Request $request, $id)
     {
-        $data = DataKerusakanToilet::findOrFail($id);
-        $data->update($request->all());
+        // Validasi input sesuai kebutuhan
+        $validatedData = $request->validate([
+            'kd_karyawan' => 'required|string',
+            'kd_toilet' => 'required|string',
+            'tanggal_pembuatan' => 'required|date',
+            'tanggal_kejadian' => 'required|date',
+            'nama_kerusakan' => 'required|string|max:255',
+            'lokasi_kerusakan' => 'required|string|max:255',
+            'kronologi_kerusakan' => 'required|string',
+            'tindakan' => 'required|string',
+            'lampiran_foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'yang_melaporkan' => 'required|string|max:255',
+            'yang_mengetahui' => 'required|string|max:255',
+            'catatan_perbaikan' => 'required|string',
+            'yang_mengerjakan' => 'required|string|max:255'
+        ]);
 
-        return redirect('semua-kerusakan-toilet');
+        // Ambil data berdasarkan ID
+        $data = DataKerusakanToilet::findOrFail($id);
+
+        // Update data kecuali jika lampiran_foto tidak diisi
+        $data->update(array_filter($validatedData, function ($value) {
+            return !empty($value);
+        }));
+
+        // Handle lampiran_foto jika ada perubahan
+        if ($request->hasFile('lampiran_foto')) {
+            // Hapus file foto lama jika ada
+            if ($data->lampiran_foto && Storage::disk('public')->exists($data->lampiran_foto)) {
+                Storage::disk('public')->delete($data->lampiran_foto);
+            }
+
+            // Simpan file foto yang baru diupload
+            $imagePath = $request->file('lampiran_foto')->store('data_kerusakan_toilet', 'public');
+            $data->lampiran_foto = $imagePath;
+            $data->save();
+        }
+
+        // Redirect dengan pesan sukses
+        return redirect('semua-kerusakan-toilet')->with('success', 'Data kerusakan toilet berhasil diperbarui.');
     }
     public function hapusKerusakanToilet($id)
     {

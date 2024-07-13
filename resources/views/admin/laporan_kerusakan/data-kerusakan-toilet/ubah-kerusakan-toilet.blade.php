@@ -66,9 +66,16 @@
                     <input type="text" class="form-control" id="tindakan" name="tindakan" value="{{ $data->tindakan }}">
                 </div>
                 <div class="form-group">
-                    <label for="lampiran_foto">Lampiran Foto</label>
-                    <input type="text" class="form-control" id="lampiran_foto" name="lampiran_foto"
-                        value="{{ $data->lampiran_foto }}">
+                    <label for="lampiran_foto" class="form-label">Lampiran Foto</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="lampiran_foto" name="lampiran_foto"
+                                accept="image/*">
+                            <label class="custom-file-label" for="lampiran_foto">Pilih File</label>
+                        </div>
+                    </div>
+                    <img id="preview" src="{{ asset('storage/' . $data->lampiran_foto) }}" alt="Preview Gambar"
+                        style="margin-top: 10px; max-width: 200px;" />
                 </div>
                 <div class="form-group">
                     <label for="yang_melaporkan">Yang Melaporkan</label>
@@ -98,4 +105,25 @@
             </div>
         </form>
     </div>
+
+    <script>
+        document.getElementById('lampiran_foto').addEventListener('change', function(event) {
+            const input = event.target;
+            const preview = document.getElementById('preview');
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.src = '#';
+                preview.style.display = 'none';
+            }
+        });
+    </script>
 @endsection
