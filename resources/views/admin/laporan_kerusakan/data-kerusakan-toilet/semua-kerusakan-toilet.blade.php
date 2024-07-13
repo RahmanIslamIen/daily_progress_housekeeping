@@ -43,7 +43,11 @@
                 <p>lokasi kerusakan :{{ $semuaData->lokasi_kerusakan }}</p>
                 <p>kronologi kerusakan : {{ $semuaData->kronologi_kerusakan }}</p>
                 <p>tindakan : {{ $semuaData->tindakan }}</p>
-                <p>lampiran foto : {{ $semuaData->lampiran_foto }}</p>
+                <p>lampiran foto :
+                    <img src="{{ asset('storage/' . $semuaData->lampiran_foto) }}" alt="Lampiran Foto"
+                        style="position: absolute; object-fit: contain; border-radius: 20px; 
+                                    max-width: 250px; max-height: 250px; translate: z-index: 10;" />
+                </p>
                 <p>yang melaporkan :{{ $semuaData->yang_melaporkan }}</p>
                 <p>yang mengetahui : {{ $semuaData->yang_mengetahui }}</p>
                 <p>catatan perbaiakan : {{ $semuaData->catatan_perbaikan }}</p>
