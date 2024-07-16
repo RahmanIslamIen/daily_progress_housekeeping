@@ -27,7 +27,7 @@ class PermintaanPerubahanController extends Controller
     public function simpanPermintaanUbahDailyShift(Request $request)
     {
         PermintaanUbahDailyShift::create($request->all());
-        return redirect('semua-permintaan-perubahan-daily-shift');
+        return redirect('semua-permintaan-perubahan-daily-shift')->with('success', 'berhasil simpan permintaan!');
     }
     public function editPermintaanUbahDailyShift($id)
     {
@@ -39,14 +39,14 @@ class PermintaanPerubahanController extends Controller
         $data = PermintaanUbahDailyShift::findOrFail($id);
         $data->update($request->all());
 
-        return redirect('semua-permintaan-perubahan-daily-shift');
+        return redirect('semua-permintaan-perubahan-daily-shift')->with('success', 'berhasil ubah permintaan!');
     }
     public function hapusPermintaanUbahDailyShift($id)
     {
         $data = PermintaanUbahDailyShift::findOrFail($id);
         $data->delete();
 
-        return redirect('semua-permintaan-perubahan-daily-shift');
+        return redirect('semua-permintaan-perubahan-daily-shift')->with('success', 'hapus permintaan perubahan daily shift!');
     }
     // Permintaan Perubahan Toilet
     public function semuaPermintaanUbahToilet()
@@ -61,7 +61,7 @@ class PermintaanPerubahanController extends Controller
     public function simpanPermintaanUbahToilet(Request $request)
     {
         PermintaanUbahToilet::create($request->all());
-        return redirect('semua-permintaan-perubahan-toilet');
+        return redirect('semua-permintaan-perubahan-toilet')->with('success', 'simpan permintaan perubahan!');
     }
     public function editPermintaanUbahToilet($id)
     {
@@ -73,14 +73,14 @@ class PermintaanPerubahanController extends Controller
         $data = PermintaanUbahToilet::findOrFail($id);
         $data->update($request->all());
 
-        return redirect('semua-permintaan-perubahan-toilet');
+        return redirect('semua-permintaan-perubahan-toilet')->with('success', 'ubah permintaan perubahan!');
     }
     public function hapusPermintaanUbahToilet($id)
     {
         $data = PermintaanUbahToilet::findOrFail($id);
         $data->delete();
 
-        return redirect('semua-permintaan-perubahan-toilet');
+        return redirect('semua-permintaan-perubahan-toilet')->with('success', 'hapus permintaan perubahan!');
     }
 
     // * ======================================================================================
@@ -102,14 +102,14 @@ class PermintaanPerubahanController extends Controller
     public function UserSimpanPermintaanUbahDailyShift(Request $request)
     {
         PermintaanUbahDailyShift::create($request->all());
-        return redirect('user-semua-permintaan-perubahan-daily-shift');
+        return redirect('user-semua-permintaan-perubahan-daily-shift')->with('success', 'berhasil menambah permintaan perubahan!');
     }
     public function UserHapusPermintaanUbahDailyShift($id)
     {
         $data = PermintaanUbahDailyShift::findOrFail($id);
         $data->delete();
 
-        return redirect('user-semua-permintaan-perubahan-daily-shift');
+        return redirect('user-semua-permintaan-perubahan-daily-shift')->with('success', 'hapus permintaan perubahaan!');
     }
     // Permintaan Perubahan Toilet
     public function UserSemuaPermintaanUbahToilet()
@@ -124,14 +124,14 @@ class PermintaanPerubahanController extends Controller
     public function UserSimpanPermintaanUbahToilet(Request $request)
     {
         PermintaanUbahToilet::create($request->all());
-        return redirect('user-semua-permintaan-perubahan-toilet');
+        return redirect('user-semua-permintaan-perubahan-toilet')->with('success', 'simpan permintaan ubah!');
     }
     public function UserHapusPermintaanUbahToilet($id)
     {
         $data = PermintaanUbahToilet::findOrFail($id);
         $data->delete();
 
-        return redirect('user-semua-permintaan-perubahan-toilet');
+        return redirect('user-semua-permintaan-perubahan-toilet')->with('success', 'hapus permintaan perubahan!');
     }
 
 }

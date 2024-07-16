@@ -34,8 +34,17 @@ class KelolaPenugasanController extends Controller
     }
     public function simpanShiftTask(Request $request)
     {
+        $request->validate([
+            'kd_daily_task' => 'required',
+            'jam' => 'required',
+            'task_pekerjaan' => 'required',
+            'jenis_toilet' => 'required',
+            'keterangan' => 'required',
+        ]);
+
         ShiftTask::create($request->all());
-        return redirect('semua-shift-task');
+
+        return redirect('semua-shift-task')->with('success', 'Shift Task berhasil ditambahkan!');
     }
     public function editShiftTask($id)
     {
@@ -47,14 +56,14 @@ class KelolaPenugasanController extends Controller
         $dailyShift = ShiftTask::findOrFail($id);
         $dailyShift->update($request->all());
 
-        return redirect('semua-shift-task');
+        return redirect('semua-shift-task')->with('success', 'Shift Task berhasil diperbarui!');
     }
     public function hapusShiftTask($id)
     {
         $dailyShift = ShiftTask::findOrFail($id);
         $dailyShift->delete();
 
-        return redirect('semua-shift-task');
+        return redirect('semua-shift-task')->with('success', 'Shift Task berhasil dihapus!');
     }
     // * Daily Shift
     public function semuaDailyShift()
@@ -82,7 +91,7 @@ class KelolaPenugasanController extends Controller
 
         DailyShift::create($request->all());
 
-        return redirect('semua-daily-shift');
+        return redirect('semua-daily-shift')->with('success', 'berhasil di simpan!');
     }
     public function editDailyShift($id)
     {
@@ -106,14 +115,14 @@ class KelolaPenugasanController extends Controller
         $dailyShift = DailyShift::findOrFail($id);
         $dailyShift->update($request->all());
 
-        return redirect('semua-daily-shift');
+        return redirect('semua-daily-shift')->with('success', 'berhasil di update!');
     }
     public function hapusDailyShift($id)
     {
         $dailyShift = DailyShift::findOrFail($id);
         $dailyShift->delete();
 
-        return redirect('semua-daily-shift');
+        return redirect('semua-daily-shift')->with('success', 'berhasil di hapus!');
     }
 
     // * ======================================================================================
@@ -135,7 +144,7 @@ class KelolaPenugasanController extends Controller
     {
         DailyShift::create($request->all());
 
-        return redirect('user-semua-daily-shift');
+        return redirect('user-semua-daily-shift')->with('success', 'berhasil absensi!');
     }
 
     // ? ======================================================================================

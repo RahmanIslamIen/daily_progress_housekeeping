@@ -26,31 +26,45 @@
         <form method="POST" action="tambah-shift-task">
             @csrf
             <div class="card-body">
-                <div class="form-group">
-                    <label for="kd_daily_task">Kd Daily Task</label>
-                    <input type="text" class="form-control" id="kd_daily_task" name="kd_daily_task"
-                        value="{{ $newKdDailyTask }}" readonly>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="kd_daily_task">Kd Daily Task</label>
+                            <input type="text" class="form-control" id="kd_daily_task" name="kd_daily_task"
+                                value="{{ $newKdDailyTask }}" readonly>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="jam">Jam</label>
+                            <input type="time" class="form-control" id="jam" name="jam" required>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="jam">Jam</label>
-                    <input type="time" class="form-control" id="jam" name="jam">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="task_pekerjaan">Task Pekerjaan</label>
+                            <input type="text" class="form-control" id="task_pekerjaan" name="task_pekerjaan" required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="jenis_toilet">Jenis Toilet</label>
+                            <select class="form-control" id="jenis_toilet" name="jenis_toilet" required>
+                                <option value="pria">Pria</option>
+                                <option value="wanita">Wanita</option>
+                                <option value="vip">Vip</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="task_pekerjaan">Task Pekerjaan</label>
-                    <input type="text" class="form-control" id="task_pekerjaan" name="task_pekerjaan">
-                </div>
-                <div class="form-group">
-                    <label for="jenis_toilet">Jenis Toilet</label>
-                    <select class="form-control" id="jenis_toilet" name="jenis_toilet">
-                        <option value="pria">Pria</option>
-                        <option value="wanita">Wanita</option>
-                        <option value="vip">Vip</option>
-                    </select>
-                </div>
+
                 <div class="form-group">
                     <label for="keterangan">Keterangan</label>
-                    <input type="text" class="form-control" id="keterangan" name="keterangan">
+                    <textarea name="keterangan" class="form-control" id="keterangan" cols="30" rows="5" required></textarea>
                 </div>
+
             </div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary" style="float: right">Simpan</button>

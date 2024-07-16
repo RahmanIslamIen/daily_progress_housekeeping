@@ -26,32 +26,47 @@
         <form method="POST" action="/ubah-shift-task/{{ $data->id }}">
             @csrf
             <div class="card-body">
-                <div class="form-group">
-                    <label for="kd_daily_task">Kd Daily Task</label>
-                    <input type="text" class="form-control" id="kd_daily_task" name="kd_daily_task"
-                        value="{{ $data->kd_daily_task }}" readonly>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="kd_daily_task">Kd Daily Task</label>
+                            <input type="text" class="form-control" id="kd_daily_task" name="kd_daily_task"
+                                value="{{ $data->kd_daily_task }}" readonly>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="task_pekerjaan">Task Pekerjaan</label>
+                            <input type="text" class="form-control" id="task_pekerjaan" name="task_pekerjaan"
+                                value="{{ $data->task_pekerjaan }}">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="jam">jam</label>
-                    <input type="time" class="form-control" id="jam" name="jam" value="{{ $data->jam }}">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="jam">jam</label>
+                            <input type="time" class="form-control" id="jam" name="jam"
+                                value="{{ $data->jam }}">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="jenis_toilet">Jenis Toilet</label>
+                            <select class="form-control" id="jenis_toilet" name="jenis_toilet">
+                                <option value="pria" {{ $data->jenis_toilet == 'pria' ? 'selected' : '' }}>Pria</option>
+                                <option value="wanita" {{ $data->jenis_toilet == 'wanita' ? 'selected' : '' }}>Wanita
+                                </option>
+                                <option value="vip" {{ $data->jenis_toilet == 'vip' ? 'selected' : '' }}>Vip</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="task_pekerjaan">Task Pekerjaan</label>
-                    <input type="text" class="form-control" id="task_pekerjaan" name="task_pekerjaan"
-                        value="{{ $data->task_pekerjaan }}">
-                </div>
-                <div class="form-group">
-                    <label for="jenis_toilet">Jenis Toilet</label>
-                    <select class="form-control" id="jenis_toilet" name="jenis_toilet">
-                        <option value="pria" {{ $data->jenis_toilet == 'pria' ? 'selected' : '' }}>Pria</option>
-                        <option value="wanita" {{ $data->jenis_toilet == 'wanita' ? 'selected' : '' }}>Wanita</option>
-                        <option value="vip" {{ $data->jenis_toilet == 'vip' ? 'selected' : '' }}>Vip</option>
-                    </select>
-                </div>
+
                 <div class="form-group">
                     <label for="keterangan">Keterangan</label>
-                    <input type="text" class="form-control" id="keterangan" name="keterangan"
-                        value="{{ $data->keterangan }}">
+                    <textarea id="keterangan" name="keterangan" class="form-control" cols="30" rows="5">{{ $data->keterangan }}</textarea>
                 </div>
             </div>
             <!-- /.card-body -->

@@ -28,50 +28,74 @@
         <form method="POST" action="user-tambah-daily-shift">
             @csrf
             <div class="card-body">
-                <div class="form-group">
-                    <label for="kd_daily_task">Kd Daily Task</label>
-                    <select class="form-control" id="kd_daily_task" name="kd_daily_task">
-                        @foreach ($shiftTasks as $task)
-                            <option value="{{ $task->kd_daily_task }}">{{ $task->kd_daily_task }}</option>
-                        @endforeach
-                    </select>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="kd_daily_task">Kd Daily Task</label>
+                            <select class="form-control" id="kd_daily_task" name="kd_daily_task">
+                                @foreach ($shiftTasks as $task)
+                                    <option value="{{ $task->kd_daily_task }}">{{ $task->kd_daily_task }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="tanggal">Tanggal</label>
+                            <input type="date" class="form-control" id="tanggal" name="tanggal">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="ploting_lantai">Ploting Lantai</label>
-                    <input type="text" class="form-control" id="ploting_lantai" name="ploting_lantai"
-                        placeholder="masukan plotingan lantai">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="ploting_lantai">Ploting Lantai</label>
+                            <input type="text" class="form-control" id="ploting_lantai" name="ploting_lantai"
+                                placeholder="masukan plotingan lantai">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama"
+                                value="{{ Auth::user()->name }}" readonly>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="kd_karyawan">Kd karyawan</label>
-                    <input type="text" class="form-control" id="kd_karyawan" name="kd_karyawan"
-                        placeholder="masukan kode karyawan">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="kd_karyawan">Kd karyawan</label>
+                            <input type="text" class="form-control" id="kd_karyawan" name="kd_karyawan"
+                                placeholder="masukan kode karyawan">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="checklist_masuk">Check List Masuk</label>
+                            <input type="time" class="form-control" id="checklist_masuk" name="checklist_masuk"
+                                placeholder="masukan kode karyawan">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="jenis_shift">Jenis Shift</label>
-                    <select class="form-control" id="jenis_shift" name="jenis_shift">
-                        <option value="Pagi">Pagi</option>
-                        <option value="Siang">Siang</option>
-                        <option value="Malam">Malam</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="tanggal">Tanggal</label>
-                    <input type="date" class="form-control" id="tanggal" name="tanggal">
-                </div>
-                <div class="form-group">
-                    <label for="nama">Nama</label>
-                    <input type="text" class="form-control" id="nama" name="nama"
-                        value="{{ Auth::user()->name }}" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="checklist_masuk">Check List Masuk</label>
-                    <input type="time" class="form-control" id="checklist_masuk" name="checklist_masuk"
-                        placeholder="masukan kode karyawan">
-                </div>
-                <div class="form-group">
-                    <label for="checklist_keluar">Check List Keluar</label>
-                    <input type="time" class="form-control" id="checklist_keluar" name="checklist_keluar"
-                        placeholder="masukan kode karyawan">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="jenis_shift">Jenis Shift</label>
+                            <select class="form-control" id="jenis_shift" name="jenis_shift">
+                                <option value="Pagi">Pagi</option>
+                                <option value="Siang">Siang</option>
+                                <option value="Malam">Malam</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="checklist_keluar">Check List Keluar</label>
+                            <input type="time" class="form-control" id="checklist_keluar" name="checklist_keluar"
+                                placeholder="masukan kode karyawan">
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- /.card-body -->
