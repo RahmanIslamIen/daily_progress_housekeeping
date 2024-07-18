@@ -1,11 +1,26 @@
 # Daily Progress Housekepeeing
+
 aplikasi absensi tugas pekerjaaan yang digunakan oleh para karyawan devisi housekeeping.
+
 ## Developer Aplikasi Oleh Rahman Islam 411211069
+
 sebagai proyek kerja praktek dari kerja magang di pt carefast di gedung millenium cantenial center.
+
 ### Tampilan Aplikasi
-<img src="tampilanDashboard.png"/>
+
+<table>
+    <tr>
+        <td><img src="screeenshot_aplikasi/dashboard_admin.png"/></td>
+        <td><img src="screeenshot_aplikasi/dashboard_user.png.png"/></td>
+    </tr>
+    <tr>
+        <td><img src="screeenshot_aplikasi/kerusakan-toilet.png"/></td>
+        <td><img src="screeenshot_aplikasi/pint_daily_shift.png"/></td>
+    </tr>
+</table>
 
 # Framework Yang Digunakan
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

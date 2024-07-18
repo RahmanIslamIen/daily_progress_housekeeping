@@ -23,7 +23,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form method="POST" action="/ubah-kerusakan-toilet/{{ $data->id }}">
+        <form method="POST" action="/ubah-kerusakan-toilet/{{ $data->id }}" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
                 <div class="form-group">
