@@ -11,7 +11,7 @@ sebagai proyek kerja praktek dari kerja magang di pt carefast di gedung milleniu
 <table>
     <tr>
         <td><img src="screeenshot_aplikasi/dashboard_admin.png"/></td>
-        <td><img src="screeenshot_aplikasi/dashboard_user.png.png"/></td>
+        <td><img src="screeenshot_aplikasi/dashboard_user.png"/></td>
     </tr>
     <tr>
         <td><img src="screeenshot_aplikasi/kerusakan-toilet.png"/></td>
