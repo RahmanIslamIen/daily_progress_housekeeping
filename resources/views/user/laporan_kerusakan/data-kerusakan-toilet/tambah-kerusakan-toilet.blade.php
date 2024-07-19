@@ -27,22 +27,35 @@
         <form method="POST" action="user-tambah-kerusakan-toilet">
             @csrf
             <div class="card-body">
-                <div class="form-group">
-                    <label for="kd_karyawan">Kd karyawan</label>
-                    <input type="text" class="form-control" id="kd_karyawan" name="kd_karyawan">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="kd_karyawan">Kd karyawan</label>
+                            <input type="text" class="form-control" id="kd_karyawan" name="kd_karyawan">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="kd_toilet">Kd Toilet</label>
+                            <input type="text" class="form-control" id="kd_toilet" name="kd_toilet">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="kd_toilet">Kd Toilet</label>
-                    <input type="text" class="form-control" id="kd_toilet" name="kd_toilet">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="tanggal_pembuatan">Tanggal Pembuatan</label>
+                            <input type="date" class="form-control" id="tanggal_pembuatan" name="tanggal_pembuatan">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="tanggal_kejadian">Tanggal Kejadian</label>
+                            <input type="date" class="form-control" id="tanggal_kejadian" name="tanggal_kejadian">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="tanggal_pembuatan">Tanggal Pembuatan</label>
-                    <input type="date" class="form-control" id="tanggal_pembuatan" name="tanggal_pembuatan">
-                </div>
-                <div class="form-group">
-                    <label for="tanggal_kejadian">Tanggal Kejadian</label>
-                    <input type="date" class="form-control" id="tanggal_kejadian" name="tanggal_kejadian">
-                </div>
+
                 <div class="form-group">
                     <label for="nama_kerusakan">Nama Kerusakan</label>
                     <input type="text" class="form-control" id="nama_kerusakan" name="nama_kerusakan">
@@ -63,14 +76,23 @@
                     <label for="lampiran_foto">Lampiran Foto</label>
                     <input type="text" class="form-control" id="lampiran_foto" name="lampiran_foto">
                 </div>
-                <div class="form-group">
-                    <label for="yang_melaporkan">Yang Melaporkan</label>
-                    <input type="text" class="form-control" id="yang_melaporkan" name="yang_melaporkan">
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="yang_melaporkan">Yang Melaporkan</label>
+                            <input type="text" class="form-control" id="yang_melaporkan" name="yang_melaporkan">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="yang_mengetahui">Yang Mengetahui</label>
+                            <input type="text" class="form-control" id="yang_mengetahui" name="yang_mengetahui">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="yang_mengetahui">Yang Mengetahui</label>
-                    <input type="text" class="form-control" id="yang_mengetahui" name="yang_mengetahui">
-                </div>
+
+
                 <div class="form-group">
                     <label for="catatan_perbaikan">Catatan Perbaikan</label>
                     <input type="text" class="form-control" id="catatan_perbaikan" name="catatan_perbaikan">
