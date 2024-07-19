@@ -56,7 +56,8 @@
                 </div>
                 <div class="form-group">
                     <label for="nama">Nama</label>
-                    <input type="text" class="form-control" id="nama" name="nama" value="{{ $data->nama }}">
+                    <input type="text" class="form-control" id="nama" name="nama" value="{{ $data->nama }}"
+                        readonly>
                 </div>
                 <div class="form-group">
                     <label for="checklist_masuk">Checklist Masuk</label>
