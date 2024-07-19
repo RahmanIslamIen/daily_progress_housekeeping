@@ -27,43 +27,68 @@
         <form method="POST" action="user-tambah-permintaan-perubahan-daily-shift">
             @csrf
             <div class="card-body">
-                <div class="form-group">
-                    <label for="kd_daily_task">Kd Daily Task</label>
-                    <input type="text" class="form-control" id="kd_daily_task" name="kd_daily_task">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="kd_daily_task">Kd Daily Task</label>
+                            <input type="text" class="form-control" id="kd_daily_task" name="kd_daily_task">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="ploting_lantai">Ploting Lantai</label>
+                            <input type="text" class="form-control" id="ploting_lantai" name="ploting_lantai">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="ploting_lantai">Ploting Lantai</label>
-                    <input type="text" class="form-control" id="ploting_lantai" name="ploting_lantai">
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="kd_karyawan">Kd Karyawan</label>
+                            <input type="text" class="form-control" id="kd_karyawan" name="kd_karyawan"
+                                placeholder="masukan kode karyawan">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="jenis_shift">Jenis Shift</label>
+                            <select class="form-control" id="jenis_shift" name="jenis_shift">
+                                <option value="pagi">Pagi</option>
+                                <option value="siang">Siang</option>
+                                <option value="malam">Malam</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="tanggal">Tanggal</label>
+                            <input type="date" class="form-control" id="tanggal" name="tanggal">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="kd_karyawan">Kd Karyawan</label>
-                    <input type="text" class="form-control" id="kd_karyawan" name="kd_karyawan"
-                        placeholder="masukan kode karyawan">
-                </div>
-                <div class="form-group">
-                    <label for="jenis_shift">Jenis Shift</label>
-                    <select class="form-control" id="jenis_shift" name="jenis_shift">
-                        <option value="pagi">Pagi</option>
-                        <option value="siang">Siang</option>
-                        <option value="malam">Malam</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="tanggal">Tanggal</label>
-                    <input type="date" class="form-control" id="tanggal" name="tanggal">
-                </div>
+
                 <div class="form-group">
                     <label for="nama">Nama</label>
-                    <input type="text" class="form-control" id="nama" name="nama">
+                    <input type="text" class="form-control" id="nama" name="nama"
+                        value="{{ Auth::user()->name }}" readonly>
                 </div>
-                <div class="form-group">
-                    <label for="checklist_masuk">Check List Masuk</label>
-                    <input type="time" class="form-control" id="checklist_masuk" name="checklist_masuk">
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="checklist_masuk">Check List Masuk</label>
+                            <input type="time" class="form-control" id="checklist_masuk" name="checklist_masuk">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="checklist_keluar">Check List Keluar</label>
+                            <input type="time" class="form-control" id="checklist_keluar" name="checklist_keluar">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="checklist_keluar">Check List Keluar</label>
-                    <input type="time" class="form-control" id="checklist_keluar" name="checklist_keluar">
-                </div>
+
                 <div class="form-group" hidden>
                     <label for="approval">Approval</label>
                     <input type="text" class="form-control" id="approval" name="approval" value="not approved" disabled>
