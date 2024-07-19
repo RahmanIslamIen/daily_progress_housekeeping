@@ -27,22 +27,35 @@
         <form method="POST" action="user-tambah-permintaan-perubahan-toilet">
             @csrf
             <div class="card-body">
-                <div class="form-group">
-                    <label for="kd_toilet">Kd Toilet</label>
-                    <input type="text" class="form-control" id="kd_toilet" name="kd_toilet">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="kd_toilet">Kd Toilet</label>
+                            <input type="text" class="form-control" id="kd_toilet" name="kd_toilet">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="kondisi_toilet">Kondisi Toilet</label>
+                            <input type="text" class="form-control" id="kondisi_toilet" name="kondisi_toilet">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="kondisi_toilet">Kondisi Toilet</label>
-                    <input type="text" class="form-control" id="kondisi_toilet" name="kondisi_toilet">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="keterangan">Keterangan</label>
+                            <input type="text" class="form-control" id="keterangan" name="keterangan">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="ploting_lantai">Ploting Lantai</label>
+                            <input type="text" class="form-control" id="ploting_lantai" name="ploting_lantai">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="keterangan">Keterangan</label>
-                    <input type="text" class="form-control" id="keterangan" name="keterangan">
-                </div>
-                <div class="form-group">
-                    <label for="ploting_lantai">Ploting Lantai</label>
-                    <input type="text" class="form-control" id="ploting_lantai" name="ploting_lantai">
-                </div>
+
                 <div class="form-group">
                     <label for="jenis_toilet">Jenis Toilet</label>
                     <select class="form-control" id="jenis_toilet" name="jenis_toilet">

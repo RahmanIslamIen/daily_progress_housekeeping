@@ -77,7 +77,7 @@ Route::delete('/user-hapus-permintaan-perubahan-daily-shift/{id}', [PermintaanPe
 Route::get('/user-semua-permintaan-perubahan-toilet', [PermintaanPerubahanController::class, 'UserSemuaPermintaanUbahToilet']);
 Route::get('/user-tambah-permintaan-perubahan-toilet', [PermintaanPerubahanController::class, 'UserTambahPermintaanUbahToilet']);
 Route::post('/user-tambah-permintaan-perubahan-toilet', [PermintaanPerubahanController::class, 'UserSimpanPermintaanUbahToilet']);
-Route::post('/user-hapus-permintaan-perubahan-toilet/{id}', [PermintaanPerubahanController::class, 'UserHapusPermintaanUbahToilet']);
+Route::delete('/user-hapus-permintaan-perubahan-toilet/{id}', [PermintaanPerubahanController::class, 'UserHapusPermintaanUbahToilet']);
 
 
 
