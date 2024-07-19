@@ -171,7 +171,7 @@
     <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/chart.js/Chart.min.js') }}"></script>
     <!-- Toastr -->
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js') }}"></script>
+    <script src="{{ asset('assets/dist/js/toastr.min.js') }}"></script>
 
     <!-- Page specific script -->
     <script>
