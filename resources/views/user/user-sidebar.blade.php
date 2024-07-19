@@ -3,7 +3,9 @@
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         @if (Auth::check())
             <div class="info">
-                <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+                <a href="#" class="d-block">{{ Auth::user()->name }} - <span
+                        class="text-white">{{ Auth::user()->kd_karyawan }}</span>
+                </a>
                 <span class="badge badge-info">{{ Auth::user()->role }}</span>
             </div>
         @else
