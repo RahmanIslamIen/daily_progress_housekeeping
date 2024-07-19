@@ -26,16 +26,22 @@
         <form method="POST" action="/print-pdf-daily-shift">
             @csrf
             <div class="card-body">
-                <div class="form-group">
-                    <label for="start_date">Tanggal Mulai</label>
-                    <input type="date" class="form-control" id="start_date" name="start_date">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="start_date">Tanggal Mulai</label>
+                            <input type="date" class="form-control" id="start_date" name="start_date">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="end_date">Tanggal Akhir</label>
+                            <input type="date" class="form-control" id="end_date" name="end_date">
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="end_date">Tanggal Akhir</label>
-                    <input type="date" class="form-control" id="end_date" name="end_date">
-                </div>
-                <div class="form-group">
-                    <label for="nama">Nama</label>
+                    <label for="nama">Nama Karyawan</label>
                     <select class="form-control" id="nama" name="nama">
                         <option value="">Pilih Nama Karyawan</option>
                         @foreach ($listNamaKaryawan as $nama)
